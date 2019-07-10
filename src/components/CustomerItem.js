@@ -1,7 +1,6 @@
 import { Link } from '@reach/router';
 import React from 'react';
 
-
 const CustomerItem = ({ customer }) => {
 
     return (
@@ -14,3 +13,7 @@ const CustomerItem = ({ customer }) => {
 }
 
 export default CustomerItem
+
+
+
+

@@ -1,4 +1,4 @@
-import { navigate } from '@reach/router';
+import { Link, navigate } from '@reach/router';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteCustomerAction } from '../redux/actions';
@@ -18,6 +18,7 @@ const CustomerDetail = ({ id }) => {
     useEffect(() => {
         const customer = customers.find(customer => customer.id === id)
         setCustomer(customer)
+        // eslint-disable-next-line 
     }, [id])
 
     return (
@@ -26,7 +27,7 @@ const CustomerDetail = ({ id }) => {
             <p>{customer.phoneNo}</p>
             <p>{customer.email}</p>
             <button onClick={() => deleteCustomer(customer.id)}>X</button>
-
+            <Link to={`/customer/${customer.id}/update`}>Edit</Link>
         </div>
     )
 }

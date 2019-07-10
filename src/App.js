@@ -5,6 +5,7 @@ import Nav from './components/Nav';
 import CustomerDetail from './pages/CustomerDetail';
 import Form from './pages/Form';
 import Home from './pages/Home';
+import UpdateForm from './pages/UpdateForm';
 import store from './redux/store';
 
 function App() {
@@ -13,7 +14,8 @@ function App() {
       <Nav />
       <Router>
         <Home path="/" />
-        <Form path="/addcustomer" />
+        <Form path="/customerform" />
+        <UpdateForm path="/customer/:id/update" />
         <CustomerDetail path="/customer/:id" />
       </Router>
     </Provider>
