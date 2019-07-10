@@ -23,11 +23,11 @@ const CustomerDetail = ({ id }) => {
 
     return (
         <div className="customer-detail">
-            <h3>{customer.firstName} {customer.lastName}</h3>
-            <p>{customer.phoneNo}</p>
-            <p>{customer.email}</p>
-            <button onClick={() => deleteCustomer(customer.id)}>X</button>
-            <Link to={`/customer/${customer.id}/update`}>Edit</Link>
+            <h3 className="header-medium">{customer.firstName} {customer.lastName}</h3>
+            <p>Phone no.: {customer.phoneNo}</p>
+            <p>Email: {customer.email}</p>
+            <button className="delete-btn btn" onClick={() => deleteCustomer(customer.id)}>Delete</button>
+            <Link className="edit-btn btn" to={`/customer/${customer.id}/update`}>Edit</Link>
         </div>
     )
 }

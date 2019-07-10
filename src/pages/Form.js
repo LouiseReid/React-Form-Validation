@@ -1,8 +1,12 @@
 import React, { useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import uuid from 'uuid/v4';
 import { addCustomerAction } from '../redux/actions';
 import validator from '../validator';
+
+toast.configure()
 
 const Form = () => {
 
@@ -19,6 +23,7 @@ const Form = () => {
             .then(response => {
                 if (response) {
                     addCustomer(inputs)
+                    toast(`Excellent job, you saved ${inputs.firstName}!`)
                 }
             })
 
@@ -36,7 +41,7 @@ const Form = () => {
     }
 
     return (
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit} >
             <div className="form-element">
                 <input type="text"
                     ref={nameInput}
