@@ -1,14 +1,19 @@
+import { Router } from '@reach/router';
 import React from 'react';
 import { Provider } from 'react-redux';
-import Form from './components/Form';
+import Nav from './components/Nav';
+import Form from './pages/Form';
+import Home from './pages/Home';
 import store from './redux/store';
 
 function App() {
   return (
     <Provider store={store}>
-      <div className="App">
-        <Form />
-      </div>
+      <Nav />
+      <Router>
+        <Home path="/" />
+        <Form path="/addcustomer" />
+      </Router>
     </Provider>
 
   );
