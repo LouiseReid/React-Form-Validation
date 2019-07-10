@@ -1,8 +1,17 @@
 import { createStore } from 'redux';
+import uuid from 'uuid/v4';
 import reducer from './reducer';
 
 const initialState = {
-    customers: []
+    customers: [
+        {
+            id: uuid(),
+            firstName: 'Louise',
+            lastName: 'Reid',
+            phoneNo: '01237456894',
+            email: 'louise@louise.co'
+        }
+    ]
 }
 
 let store = createStore(
