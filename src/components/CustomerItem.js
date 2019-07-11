@@ -6,7 +6,7 @@ const CustomerItem = ({ customer }) => {
     return (
         <div className="customer-item">
             <p>{customer.firstName} {customer.lastName}</p>
-            <Link to={`/customer/${customer.id}`}>Details</Link>
+            <Link to={process.env.PUBLIC_URL + `/customer/${customer.id}`}>Details</Link>
         </div>
     )
 

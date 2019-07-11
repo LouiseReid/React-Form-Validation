@@ -15,10 +15,10 @@ function App() {
     <Provider store={store}>
       <Nav />
       <Router>
-        <Home path="/" />
-        <Form path="/customerform" />
-        <UpdateForm path="/customer/:id/update" />
-        <CustomerDetail path="/customer/:id" />
+        <Home path={process.env.PUBLIC_URL + '/'} />
+        <Form path={process.env.PUBLIC_URL + '/customerform'} />
+        <UpdateForm path={process.env.PUBLIC_URL + '/customerform/:id/update'} />
+        <CustomerDetail path={process.env.PUBLIC_URL + '/customer/:id'} />
       </Router>
     </Provider>
 

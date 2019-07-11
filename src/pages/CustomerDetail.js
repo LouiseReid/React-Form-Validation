@@ -12,7 +12,7 @@ const CustomerDetail = ({ id }) => {
 
     const deleteCustomer = (customer) => {
         dispatch(deleteCustomerAction(customer))
-        navigate('/')
+        navigate(process.env.PUBLIC_URL + '/')
     }
 
     useEffect(() => {
@@ -27,7 +27,7 @@ const CustomerDetail = ({ id }) => {
             <p>Phone no.: {customer.phoneNo}</p>
             <p>Email: {customer.email}</p>
             <button className="delete-btn btn" onClick={() => deleteCustomer(customer.id)}>Delete</button>
-            <Link className="edit-btn btn" to={`/customer/${customer.id}/update`}>Edit</Link>
+            <Link className="edit-btn btn" to={process.env.PUBLIC_URL + `/customer/${customer.id}/update`}>Edit</Link>
         </div>
     )
 }
